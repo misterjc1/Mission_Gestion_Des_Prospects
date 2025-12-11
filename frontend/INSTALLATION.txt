@@ -1,0 +1,32 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║     🎨 FRONTEND CYJE CRM - INSTALLATION RAPIDE            ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+📥 ÉTAPES D'INSTALLATION:
+
+1. Décompressez ce ZIP dans:
+   H:\Desktop\COURS ING 2 GSI\CYJE\MP\dsi\cyje-crm-complete\frontend
+
+2. Ouvrez PowerShell dans le dossier frontend
+
+3. Installez les dépendances:
+   npm install
+
+4. Démarrez le backend dans un autre terminal:
+   cd ..\backend
+   mvnw spring-boot:run
+
+5. Démarrez le frontend:
+   npm start
+
+6. Ouvrez http://localhost:4200
+
+7. Connectez-vous:
+   Email: admin@cyje.fr
+   Password: admin123
+
+✅ C'EST PRÊT !
+
+📖 Lisez README.md pour plus de détails.

@@ -1,0 +1,64 @@
+<div class="container" *ngIf="!loading && prospect">
+  <mat-card>
+    <mat-card-header>
+      <mat-icon mat-card-avatar>business</mat-icon>
+      <mat-card-title>{{prospect.nomEntreprise}}</mat-card-title>
+      <mat-card-subtitle>{{prospect.nomContact}}</mat-card-subtitle>
+      <mat-chip [color]="'primary'" selected>{{prospect.statut}}</mat-chip>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="info-grid">
+        <div class="info-item">
+          <mat-icon>email</mat-icon>
+          <div>
+            <strong>Email</strong>
+            <p>{{prospect.email || 'Non renseigné'}}</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <mat-icon>phone</mat-icon>
+          <div>
+            <strong>Téléphone</strong>
+            <p>{{prospect.telephone || 'Non renseigné'}}</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <mat-icon>euro</mat-icon>
+          <div>
+            <strong>Montant potentiel</strong>
+            <p>{{prospect.montantPotentiel | number:'1.0-0'}}€</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <mat-icon>work</mat-icon>
+          <div>
+            <strong>Secteur</strong>
+            <p>{{prospect.secteurActivite || 'Non renseigné'}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="notes" *ngIf="prospect.notes">
+        <h3>Notes</h3>
+        <p>{{prospect.notes}}</p>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-button routerLink="/prospects">
+        <mat-icon>arrow_back</mat-icon>
+        Retour
+      </button>
+      <button mat-raised-button color="primary" [routerLink]="['/prospects', prospect.id, 'edit']">
+        <mat-icon>edit</mat-icon>
+        Modifier
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div *ngIf="loading" class="loading">Chargement...</div>

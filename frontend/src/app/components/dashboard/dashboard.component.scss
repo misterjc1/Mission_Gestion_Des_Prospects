@@ -1,0 +1,119 @@
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+
+  h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 8px 0 0;
+    color: #666;
+  }
+
+  button {
+    height: 48px;
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px !important;
+  cursor: pointer;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  mat-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .stat-content {
+    h2 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 4px 0 0;
+      font-size: 14px;
+      color: rgba(255,255,255,0.9);
+    }
+  }
+
+  &.total {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+
+  &.new {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+  }
+
+  &.contact {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+  }
+
+  &.signed {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    color: white;
+  }
+
+  &.amount {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    color: white;
+  }
+
+  &.conversion {
+    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    color: white;
+  }
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 60px 20px;
+  
+  mat-icon {
+    font-size: 64px;
+    width: 64px;
+    height: 64px;
+    color: #ccc;
+  }
+
+  p {
+    margin: 16px 0;
+    font-size: 18px;
+    color: #666;
+  }
+
+  .hint {
+    font-size: 14px;
+    color: #999;
+  }
+}

@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: cyje-crm-postgres
+    environment:
+      POSTGRES_DB: cyje_crm_db
+      POSTGRES_USER: cyje_user
+      POSTGRES_PASSWORD: cyje_password_2025
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - cyje-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cyje_user -d cyje_crm_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  cyje-network:
+    driver: bridge

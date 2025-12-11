@@ -1,0 +1,41 @@
+<mat-toolbar color="primary" class="navbar">
+  <div class="logo" routerLink="/dashboard">
+    <mat-icon>business_center</mat-icon>
+    <span>CYJE CRM</span>
+  </div>
+
+  <span class="spacer"></span>
+
+  <button mat-button routerLink="/dashboard">
+    <mat-icon>dashboard</mat-icon>
+    <span class="hide-mobile">Dashboard</span>
+  </button>
+
+  <button mat-button routerLink="/prospects">
+    <mat-icon>business</mat-icon>
+    <span class="hide-mobile">Prospects</span>
+  </button>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/profile">
+      <mat-icon>person</mat-icon>
+      <span>Mon Profil</span>
+    </button>
+
+    <button mat-menu-item routerLink="/users" *ngIf="isAdmin">
+      <mat-icon>group</mat-icon>
+      <span>Utilisateurs</span>
+    </button>
+
+    <mat-divider></mat-divider>
+
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Déconnexion</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

@@ -1,0 +1,12 @@
+backend/target/
+backend/.mvn/
+backend/*.iml
+backend/.idea/
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+postgres_data/
+.vscode/
+.DS_Store
+*.swp
+*.log

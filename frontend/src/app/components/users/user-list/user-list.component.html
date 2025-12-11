@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="header">
+    <h1>👥 Gestion des Utilisateurs</h1>
+  </div>
+
+  <div *ngIf="loading" class="loading">Chargement...</div>
+
+  <div *ngIf="!loading" class="users-grid">
+    <mat-card *ngFor="let user of users" class="user-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar>person</mat-icon>
+        <mat-card-title>{{user.prenom}} {{user.nom}}</mat-card-title>
+        <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="chips">
+          <mat-chip [color]="user.role === 'ADMIN' ? 'primary' : 'accent'" selected>
+            {{user.role}}
+          </mat-chip>
+          <mat-chip [color]="user.actif ? '' : 'warn'">
+            {{user.actif ? 'Actif' : 'Inactif'}}
+          </mat-chip>
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button 
+                [color]="user.actif ? 'warn' : 'primary'" 
+                (click)="toggleActive(user.id)">
+          <mat-icon>{{user.actif ? 'block' : 'check_circle'}}</mat-icon>
+          {{user.actif ? 'Désactiver' : 'Activer'}}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

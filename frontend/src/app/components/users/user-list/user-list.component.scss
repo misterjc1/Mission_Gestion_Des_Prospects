@@ -1,0 +1,41 @@
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header {
+  margin-bottom: 32px;
+
+  h1 {
+    margin: 0;
+    font-size: 32px;
+  }
+}
+
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.user-card {
+  mat-card-header {
+    margin-bottom: 16px;
+  }
+
+  .chips {
+    display: flex;
+    gap: 8px;
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 60px;
+}

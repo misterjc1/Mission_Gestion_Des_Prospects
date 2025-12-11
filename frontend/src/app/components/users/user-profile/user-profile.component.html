@@ -1,0 +1,28 @@
+<div class="container" *ngIf="user">
+  <mat-card>
+    <mat-card-header>
+      <mat-icon mat-card-avatar class="avatar-icon">account_circle</mat-icon>
+      <mat-card-title>Mon Profil</mat-card-title>
+      <mat-card-subtitle>Informations personnelles</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="info-row">
+        <strong>Nom complet</strong>
+        <span>{{user.prenom}} {{user.nom}}</span>
+      </div>
+
+      <div class="info-row">
+        <strong>Email</strong>
+        <span>{{user.email}}</span>
+      </div>
+
+      <div class="info-row">
+        <strong>Rôle</strong>
+        <mat-chip [color]="user.role === 'ADMIN' ? 'primary' : 'accent'" selected>
+          {{user.role}}
+        </mat-chip>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

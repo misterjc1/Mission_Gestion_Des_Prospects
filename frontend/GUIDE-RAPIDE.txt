@@ -1,0 +1,28 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║     🎨 GUIDE ULTRA-RAPIDE - INSTALLATION                  ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+1. Extraire le ZIP dans:
+   H:\Desktop\COURS ING 2 GSI\CYJE\MP\dsi\cyje-crm-complete\
+
+2. Renommer en "frontend"
+
+3. Installer:
+   cd frontend
+   npm install
+
+4. Démarrer backend:
+   cd ..\backend
+   mvnw spring-boot:run
+
+5. Démarrer frontend:
+   cd ..\frontend
+   npm start
+
+6. Ouvrir: http://localhost:4200
+
+7. Login: admin@cyje.fr / admin123
+
+✅ TERMINÉ !

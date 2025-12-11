@@ -1,0 +1,79 @@
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+
+  h1 {
+    margin: 0;
+    font-size: 32px;
+  }
+}
+
+.prospects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.prospect-card {
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+
+  mat-card-header {
+    margin-bottom: 16px;
+  }
+
+  .info-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #666;
+
+    mat-icon {
+      font-size: 18px;
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  mat-chip {
+    margin-top: 8px;
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.loading, .empty {
+  text-align: center;
+  padding: 60px 20px;
+
+  mat-icon {
+    font-size: 64px;
+    width: 64px;
+    height: 64px;
+    color: #ccc;
+  }
+
+  p {
+    margin: 16px 0;
+    font-size: 18px;
+    color: #666;
+  }
+}
